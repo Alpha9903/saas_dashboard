@@ -8,12 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'subscriptionpage')));
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Serve the dashboard.html file at the root URL
-
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'subscriptionpage', 'dashboard.html'));
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'dashboard.html'));
 });
 
 // PostgreSQL connection
