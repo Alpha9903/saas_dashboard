@@ -10,17 +10,18 @@ app.use(express.json());
 // Serve static files
 app.use(express.static(path.join(__dirname, 'subscriptionpage')));
 
+// Serve the dashboard.html file at the root URL
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'subscriptionpage', 'dashboard.html'));
+});
+
 // PostgreSQL connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
-});
-
-// Serve the dashboard.html file at the root URL
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'subscriptionpage', 'dashboard.html'));
 });
 
 // Example route to get user data
