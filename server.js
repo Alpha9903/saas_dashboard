@@ -1,14 +1,14 @@
 const express = require('express');
+const path = require('path');
 const { Pool } = require('pg');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '.')));
+app.use(express.static(path.join(__dirname, 'subscriptionpage')));
 
 // PostgreSQL connection
 const pool = new Pool({
@@ -16,6 +16,11 @@ const pool = new Pool({
     ssl: {
         rejectUnauthorized: false
     }
+});
+
+// Serve the dashboard.html file at the root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'subscriptionpage', 'dashboard.html'));
 });
 
 // Example route to get user data
