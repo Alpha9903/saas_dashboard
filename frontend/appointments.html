@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments - Business Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            background-color: #2C3E50;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        .sidebar .nav-link {
+            color: white;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            background-color: #3498DB;
+            border-radius: 5px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h3 class="mb-4">Dashboard</h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="dashboard.html"><i class="fas fa-home me-2"></i>Home</a>
+                    <a class="nav-link active" href="appointments.html"><i class="fas fa-calendar me-2"></i>Appointments</a>
+                    <a class="nav-link" href="orders.html"><i class="fas fa-shopping-cart me-2"></i>Orders</a>
+                    <a class="nav-link" href="analytics.html"><i class="fas fa-chart-line me-2"></i>Analytics</a>
+                    <a class="nav-link" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a>
+                </nav>
+            </div>
+            <div class="col-md-10 main-content">
+                <h2>Appointments</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Upcoming Appointment</h5>
+                                <p><strong>Date:</strong> 2024-04-25</p>
+                                <p><strong>Time:</strong> 10:00 AM</p>
+                                <p><strong>Client:</strong> John Doe</p>
+                                <button class="btn btn-primary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">All Appointments</h5>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Client</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-04-25</td>
+                                            <td>10:00 AM</td>
+                                            <td>John Doe</td>
+                                            <td><span class="badge bg-success">Confirmed</span></td>
+                                            <td><button class="btn btn-outline-info btn-sm">Details</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-04-26</td>
+                                            <td>2:00 PM</td>
+                                            <td>Jane Smith</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td><button class="btn btn-outline-info btn-sm">Details</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-04-27</td>
+                                            <td>11:30 AM</td>
+                                            <td>Bob Lee</td>
+                                            <td><span class="badge bg-danger">Cancelled</span></td>
+                                            <td><button class="btn btn-outline-info btn-sm">Details</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
