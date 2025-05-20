@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const { Pool } = require('pg');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+// Update to use bcryptjs instead of bcrypt
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 require('dotenv').config();
