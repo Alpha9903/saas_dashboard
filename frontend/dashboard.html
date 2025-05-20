@@ -231,6 +231,56 @@
             }
         });
     </script>
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.href = 'login.html';
+        }
+        </script>
     <!-- Add your JS for charts and dynamic chat loading here -->
+    <!-- Add this inside your <body> where you want to display appointments, for example below the stats cards -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card" id="appointmentsCard">
+                <div class="card-body">
+                    <h5 class="card-title">Your Appointments</h5>
+                    <ul id="appointmentsList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card" id="ordersCard">
+                <div class="card-body">
+                    <h5 class="card-title">Your Orders</h5>
+                    <ul id="ordersList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Raise Ticket Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card" id="ticketsCard">
+                <div class="card-body">
+                    <h5 class="card-title">Raise a Support Ticket</h5>
+                    <form id="ticketForm" class="mb-3">
+                        <div class="mb-2">
+                            <input type="text" class="form-control" id="ticketSubject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-2">
+                            <textarea class="form-control" id="ticketDescription" placeholder="Describe your issue" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                    </form>
+                    <h6>Submitted Tickets</h6>
+                    <ul id="ticketsList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
